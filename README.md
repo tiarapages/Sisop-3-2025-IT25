@@ -1,7 +1,11 @@
-# Anggota Kelompok
-5027241013. Tiara Putri Prasetya
-5027241037. Danuja Prasasta Bastu
-5027241100. Imam Mahmud Dalil Fauzan
+# Laporan Resmi Praktikum SISOP Modul 3
+## Anggota Kelompok
+
+| No | Nama                     | NRP         |
+|----|--------------------------|-------------|
+| 1  | Tiara Putri Prasetya     | 5027241013  |
+| 2  | Danuja Prasasta Bastu    | 5027241037  |
+| 3  | Imam Mahmud Dalil Fauzan | 5027241100  |
 
 # ========================= SOAL 1 =========================
 |  library yang diperlukan :
