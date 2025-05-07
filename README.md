@@ -7,17 +7,17 @@
 | 2  | Danuja Prasasta Bastu    | 5027241037  |
 | 3  | Imam Mahmud Dalil Fauzan | 5027241100  |
 
-# ========================= SOAL 1 =========================
-|  library yang diperlukan :
-     - Membuat direktori (sys/stat.h)
-     - Input/output standar (stdio.h)
-     - Manajemen memori (stdlib.h)
-     - Operasi string (string.h)
-     - System calls (unistd.h)
-     - Socket programming (sys/socket.h, netinet/in.h, arpa/inet.h)
-     - Waktu (time.h)
-     - Directory operations (dirent.h)
-     - Error handling (errno.h)
+# SOAL 1
+1. Library yang diperlukan :
+     - Membuat direktori ```(sys/stat.h)```
+     - Input/output standar ```(stdio.h)```
+     - Manajemen memori ```(stdlib.h)```
+     - Operasi string ```(string.h)```
+     - System calls ```(unistd.h)```
+     - Socket programming ```(sys/socket.h, netinet/in.h, arpa/inet.h)```
+     - Waktu ```(time.h)```
+     - Directory operations ```(dirent.h)```
+     - Error handling ```(errno.h)```
 
 2. Konstanta:
    - PORT: Port untuk koneksi ke server (8080)
@@ -72,24 +72,24 @@ Kode ini merupakan implementasi client yang berkomunikasi dengan server mengguna
 
 kode ini dirancang untuk bekerja bersama dengan server yang telah dijelaskan sebelumnya, membentuk sistem RPC client-server yang lengkap.
 
-# ========================= SOAL 2 =========================
+# SOAL 2
 Soal ini ada dua program utama:
-delivery_agent.c – Menjalankan otomatisasi pengiriman Express menggunakan 3 agen.
-dispatcher.c – Mengelola pengiriman Reguler, monitoring status, serta menampilkan daftar pesanan.
+`delivery_agent.c` – Menjalankan otomatisasi pengiriman Express menggunakan 3 agen.
+`dispatcher.c` – Mengelola pengiriman Reguler, monitoring status, serta menampilkan daftar pesanan.
 
-1. delivery_agent.c
+1. `delivery_agent.c`
 Program ini bertanggung jawab atas pengiriman otomatis untuk pesanan Express.
 Terdapat 3 agen pengiriman yang akan aktif secara paralel (menggunakan thread).
-Setiap agen akan mengambil pesanan Express dari file CSV (delivery_order.csv).
-Setelah selesai mengantar, informasi akan dicatat ke dalam file log delivery.log.
+Setiap agen akan mengambil pesanan Express dari file CSV `delivery_order.csv`.
+Setelah selesai mengantar, informasi akan dicatat ke dalam file log `delivery.log`.
 
-2. dispatcher.c
+2. `dispatcher.c`
 Program ini berfungsi sebagai pengendali utama pengiriman Reguler.
 Admin dapat memilih dan memproses pesanan satu per satu secara manual.
 Tersedia fitur untuk melihat status pengiriman dan daftar pesanan.
-Semua log aktivitas juga akan tercatat di delivery.log.
+Semua log aktivitas juga akan tercatat di `delivery.log`.
 
-# ========================= SOAL 3 =========================
+# SOAL 3
 NO.3 THE LOST DUNGEON
 
 Game the lost dungeon ini menggunakan client-server. Pemain menjelajahi dungeon, yaitu menampilkan main menu player, mengecek status player, melihat dan membeli senjata, melihat penyimpanan senjata, dan bertarung melawan musuh dan error handling jika opsi yang dipilih tidak ada.
@@ -158,7 +158,7 @@ Fungsi Utama:
 -buy_weapon(): Untuk logika pembelian senjata
 -MAX_INVENTORY: Untuk Batas maksimal inventory (10)
 
-# ========================= SOAL 4 =========================
+# SOAL 4
 1. system.c
 Program admin yang bertugas:
 - Mengelola data hunter dan dungeon
