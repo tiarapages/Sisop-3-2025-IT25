@@ -90,11 +90,10 @@ Tersedia fitur untuk melihat status pengiriman dan daftar pesanan.
 Semua log aktivitas juga akan tercatat di `delivery.log`.
 
 # SOAL 3
-NO.3 THE LOST DUNGEON
+NO.3 THE LOST DUNGEON  
 
-Game the lost dungeon ini menggunakan client-server. Pemain menjelajahi dungeon, yaitu menampilkan main menu player, mengecek status player, melihat dan membeli senjata, melihat penyimpanan senjata, dan bertarung melawan musuh dan error handling jika opsi yang dipilih tidak ada.
-===============================
-1. Sistem Client-Server:
+===============================  
+1. Sistem Client-Server:  
 -`dungeon.c` berfungsi sebagai server yang menangani semua logika game
 -`player.c` berfungsi sebagai client yang menampilkan antarmuka ke pemain
 
@@ -106,8 +105,9 @@ Game the lost dungeon ini menggunakan client-server. Pemain menjelajahi dungeon,
 3. Sistem Pertarungan:
 -Musuh muncul dengan HP acak
 -Pemain menyerang dengan damage berdasarkan senjata yang dipakai
-===============================
-WEAPON SHOP
+  
+===============================  
+WEAPON SHOP  
 
 Toko menawarkan 5 senjata dengan karakteristik berbeda dan passive yang berbeda:
 1. Wooden Stick (Damage: 10, Harga: 50)
@@ -115,48 +115,73 @@ Toko menawarkan 5 senjata dengan karakteristik berbeda dan passive yang berbeda:
 3. Ice Mace (Damage: 20, Harga: 150, Passive: 10% Insta-Kill Chance)
 4. Venom Sword (Damage: 25, Harga: 200, Passive: +30% Crit Chance)
 5. Dragon Slayer (Damage: 40, Harga: 400)
-===============================
-PENJELASAN PER FILE
+   
+===============================  
+PENJELASAN PER FILE  
 
-1. `dungeon.c` (Server)
+1. `dungeon.c` (Server)  
 File ini berfungsi sebagai inti dari game atau game server, menangani semua logika permainan dan berkomunikasi dengan client.
 
-Fungsi Utama:
--`Weapon weapons[]` = Struct yang menyimpan info senjata (nama, damage, harga, passive ability).
--`main()`: Membuat socket, bind ke port 8080, listen koneksi, menerima koneksi client via `accept()`, membaca perintah client,mengeksekusi fungsi sesuai perintah, dan mengirim respon e client
--`show_weapon_shop()`: Menampilkan daftar senjata yang tersedia di toko dan mengirim ke player
--`buy_weapon()`: Menangani proses pembelian senjata
--`battle_mode()`: Mengelola mode pertarungan melawan musuh
+Fungsi Utama:  
+-`typedef struct {}` = membuat data player dalam permainan.
+-`Weapon weapons[]` = Struct yang menyimpan info senjata (nama, damage, harga, passive ability).  
+-`main()`: Membuat socket, bind ke port 8080, listen koneksi, menerima koneksi client via `accept()`, membaca perintah client,mengeksekusi fungsi sesuai perintah, dan mengirim respon e client  
+-`show_weapon_shop()`: Menampilkan daftar senjata yang tersedia di toko dan mengirim ke player  
+-`buy_weapon()`: Menangani proses pembelian senjata  
+-`battle_mode()`: Mengelola mode pertarungan melawan musuh  
+-`create_new_player` : Membuat dan menginisialisasi satu entitas Player baru dalam sistem, berdasarkan nama dan file descriptor socket-nya.
 
-Fitur yang Ditangani:
--Menyimpan status pemain (gold, senjata, damage, jumlah kill)
--Mengelola inventory pemain
--Menghitung damage dalam pertarungan
--Memberikan reward setelah mengalahkan musuh
--Menangani semua perintah dari client (SHOW_STATS, SHOP, dll)
+Fitur yang Ditangani:  
+-Menyimpan status pemain (gold, senjata, damage, jumlah kill)  
+-Mengelola inventory pemain  
+-Menghitung damage dalam pertarungan  
+-Memberikan reward setelah mengalahkan musuh  
+-Menangani semua perintah dari client (SHOW_STATS, SHOP, dll)  
 
-2. `player.c` (Client)
-File ini berfungsi sebagai antarmuka pemain, menampilkan menu dan menangani output/input dari pemain.
+2. `player.c` (Client)  
+File ini berfungsi sebagai antarmuka pemain, menampilkan menu dan menangani output/input dari pemain.  
 
-Fungsi Utama:
--`main()`: Membuat koneksi ke server dan menampilkan menu utama
--Menampilkan pilihan menu dan mengirim perintah ke server
--Menerima dan menampilkan respons dari server
+Fungsi Utama:  
+-`main()`: Membuat koneksi ke server dan menampilkan menu utama  
+-Menampilkan pilihan menu dan mengirim perintah ke server  
+-Menerima dan menampilkan respons dari server  
 
-Fitur yang Ditangani:
--Menampilkan menu utama (Status, Toko, Inventory, Battle, Exit)
--Mengirim perintah ke server berdasarkan pilihan pemain
--Menerima dan menampilkan informasi dari server
--Menangani input pemain selama mode pertarungan
+Fitur yang Ditangani:  
+-Menampilkan menu utama (Status, Toko, Inventory, Battle, Exit)  
+-Mengirim perintah ke server berdasarkan pilihan pemain  
+-Menerima dan menampilkan informasi dari server  
+-Menangani input pemain selama mode pertarungan  
 
-3. `shop.h` (Header File)
-File ini berisi mendefinisikan struktur data dan deklarasi fungsi yang terkait dengan toko senjata.
+3. `shop.h` (Header File)  
+File ini berisi mendefinisikan struktur data dan deklarasi fungsi yang terkait dengan toko senjata.  
 
-Fungsi Utama:
--`struct Weapon`: Menyimpan properti senjata: name, damage, price, passive.
--`show_weapon_shop()`: Untuk menampilkan toko daftar senjata.
--`buy_weapon()`: Untuk logika pembelian senjata
--`MAX_INVENTORY`: Untuk Batas maksimal inventory (10)
+Fungsi Utama:  
+-`struct Weapon`: Menyimpan properti senjata: name, damage, price, passive.  
+-`show_weapon_shop()`: Untuk menampilkan toko daftar senjata.  
+-`buy_weapon()`: Untuk logika pembelian senjata  
+-`MAX_INVENTORY`: Untuk Batas maksimal inventory (10)  
+
+===============================   
+CARA RUN  
+1. `player.c`
+   
+   ```
+   gcc player.c -o player
+    ```
+
+3. `dungeon.c` dan `shop.h`
+   
+   ```
+    gcc dungeon.c shop.h -o dungeon -lpthread
+   ```
+
+Lalu jalankan  
+```
+./dungeon      # di terminal 1 (server)
+./player       # di terminal 2 (client 1)
+./player       # di terminal 3 (client 2)
+```
+
 
 # SOAL 4
 1. `system.c`
