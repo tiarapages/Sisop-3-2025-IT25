@@ -93,7 +93,7 @@ Semua log aktivitas juga akan tercatat di `delivery.log`.
 NO.3 THE LOST DUNGEON
 
 Game the lost dungeon ini menggunakan client-server. Pemain menjelajahi dungeon, yaitu menampilkan main menu player, mengecek status player, melihat dan membeli senjata, melihat penyimpanan senjata, dan bertarung melawan musuh dan error handling jika opsi yang dipilih tidak ada.
-===============================
+=============================== 
 1. Sistem Client-Server:
 -`dungeon.c` berfungsi sebagai server yang menangani semua logika game
 -`player.c` berfungsi sebagai client yang menampilkan antarmuka ke pemain
@@ -167,11 +167,11 @@ Program admin yang bertugas:
 - Fitur ban/reset hunter
 
 Spesifikasi Dungeon:
-Level Minimal : 1-5
-ATK Reward   : 100-150
-HP Reward    : 50-100  
-DEF Reward   : 25-50
-EXP Reward   : 150-300
+Level Minimal : 1-5 
+ATK Reward   : 100-150 
+HP Reward    : 50-100   
+DEF Reward   : 25-50 
+EXP Reward   : 150-300 
 
 2. `hunter.c`
 Program player yang bisa:
