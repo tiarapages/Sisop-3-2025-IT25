@@ -105,7 +105,7 @@ Game the lost dungeon ini menggunakan client-server. Pemain menjelajahi dungeon,
 
 3. Sistem Pertarungan:
 -Musuh muncul dengan HP acak
--Pemain menyerang dengan damage berdasarkan senjata yang dipakai
+-Pemain menyerang dengan damage berdasarkan senjata yang dipakai dan jika passive aktif akan menggunakan passive tersebut
 ===============================
 WEAPON SHOP
 
@@ -157,6 +157,13 @@ Fungsi Utama:
 -`show_weapon_shop()`: Untuk menampilkan toko daftar senjata.
 -`buy_weapon()`: Untuk logika pembelian senjata
 -`MAX_INVENTORY`: Untuk Batas maksimal inventory (10)
+
+===============================
+OUTPUT SESUAI SOAL
+![WhatsApp Image 2025-05-07 at 16 48 27_64ee49d0](https://github.com/user-attachments/assets/d7fd7c82-f5f0-473e-9871-3c99914b5ff4)
+
+
+
 
 # SOAL 4
 1. `system.c`
