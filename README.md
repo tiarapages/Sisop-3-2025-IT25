@@ -92,9 +92,9 @@ Semua log aktivitas juga akan tercatat di `delivery.log`.
 # SOAL 3
 NO.3 THE LOST DUNGEON
 
-Game the lost dungeon ini menggunakan client-server. Pemain menjelajahi dungeon, yaitu menampilkan main menu player, mengecek status player, melihat dan membeli senjata, melihat penyimpanan senjata, dan bertarung melawan musuh dan error handling jika opsi yang dipilih tidak ada.
-===============================
-1. Sistem Client-Server:
+Game the lost dungeon ini menggunakan client-server. Pemain menjelajahi dungeon, yaitu menampilkan main menu player, mengecek status player, melihat dan membeli senjata, melihat penyimpanan senjata, dan bertarung melawan musuh dan error handling jika opsi yang dipilih tidak ada. 
+=============================== 
+1. Sistem Client-Server: 
 -`dungeon.c` berfungsi sebagai server yang menangani semua logika game
 -`player.c` berfungsi sebagai client yang menampilkan antarmuka ke pemain
 
@@ -105,7 +105,7 @@ Game the lost dungeon ini menggunakan client-server. Pemain menjelajahi dungeon,
 
 3. Sistem Pertarungan:
 -Musuh muncul dengan HP acak
--Pemain menyerang dengan damage berdasarkan senjata yang dipakai
+-Pemain menyerang dengan damage berdasarkan senjata yang dipakai 
 ===============================
 WEAPON SHOP
 
@@ -114,7 +114,7 @@ Toko menawarkan 5 senjata dengan karakteristik berbeda dan passive yang berbeda:
 2. Flame Dagger (Damage: 15, Harga: 100)
 3. Ice Mace (Damage: 20, Harga: 150, Passive: 10% Insta-Kill Chance)
 4. Venom Sword (Damage: 25, Harga: 200, Passive: +30% Crit Chance)
-5. Dragon Slayer (Damage: 40, Harga: 400)
+5. Dragon Slayer (Damage: 40, Harga: 400) 
 ===============================
 PENJELASAN PER FILE
 
@@ -153,10 +153,10 @@ Fitur yang Ditangani:
 File ini berisi mendefinisikan struktur data dan deklarasi fungsi yang terkait dengan toko senjata.
 
 Fungsi Utama:
--`struct Weapon`: Menyimpan properti senjata: name, damage, price, passive.
--`show_weapon_shop()`: Untuk menampilkan toko daftar senjata.
--`buy_weapon()`: Untuk logika pembelian senjata
--`MAX_INVENTORY`: Untuk Batas maksimal inventory (10)
+-`struct Weapon`: Menyimpan properti senjata: name, damage, price, passive. 
+-`show_weapon_shop()`: Untuk menampilkan toko daftar senjata. 
+-`buy_weapon()`: Untuk logika pembelian senjata 
+-`MAX_INVENTORY`: Untuk Batas maksimal inventory (10) 
 
 # SOAL 4
 1. `system.c`
