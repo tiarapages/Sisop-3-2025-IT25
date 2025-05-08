@@ -20,18 +20,18 @@
      - Error handling ```(errno.h)```
 
 2. Konstanta:
-   - PORT: Port untuk koneksi ke server (8080)
-   - BUFFER_SIZE: Ukuran buffer untuk transfer data (1024 bytes)
-   - SECRETS_DIR: Lokasi file teks rahasia ("client/secrets")
-   - OUTPUT_DIR: Lokasi penyimpanan file hasil download ("client")
+   - `PORT`: Port untuk koneksi ke server (8080)
+   - `BUFFER_SIZE`: Ukuran buffer untuk transfer data (1024 bytes)
+   - `SECRETS_DIR`: Lokasi file teks rahasia ("client/secrets")
+   - `OUTPUT_DIR`: Lokasi penyimpanan file hasil download ("client")
 
 3. Fungsi Utama:
-   - display_menu(): Menampilkan menu interaktif ke user
-   - list_text_files(): Menampilkan daftar file teks yang tersedia di folder secrets
-   - connect_to_server(): Membuat koneksi socket ke server
-   - send_decrypt_request(): Mengirim permintaan dekripsi file ke server
-   - send_download_request(): Mengirim permintaan download file ke server
-   - main(): Fungsi utama yang menjalankan loop menu dan memproses pilihan user
+   - `display_menu()`: Menampilkan menu interaktif ke user
+   - `list_text_files()`: Menampilkan daftar file teks yang tersedia di folder secrets
+   - `connect_to_server()`: Membuat koneksi socket ke server
+   - `send_decrypt_request()`: Mengirim permintaan dekripsi file ke server
+   - `send_download_request()`: Mengirim permintaan download file ke server
+   - `main()`: Fungsi utama yang menjalankan loop menu dan memproses pilihan user
 
 4. Alur Kerja Client:
    - Menampilkan menu utama dengan 4 opsi
@@ -95,8 +95,8 @@ NO.3 THE LOST DUNGEON
 Game the lost dungeon ini menggunakan client-server. Pemain menjelajahi dungeon, yaitu menampilkan main menu player, mengecek status player, melihat dan membeli senjata, melihat penyimpanan senjata, dan bertarung melawan musuh dan error handling jika opsi yang dipilih tidak ada.
 ===============================
 1. Sistem Client-Server:
--dungeon.c berfungsi sebagai server yang menangani semua logika game
--player.c berfungsi sebagai client yang menampilkan antarmuka ke pemain
+-`dungeon.c` berfungsi sebagai server yang menangani semua logika game
+-`player.c` berfungsi sebagai client yang menampilkan antarmuka ke pemain
 
 2. Progres Game:
 -Pemain mulai dengan senjata dasar ("Fists") dan sejumlah gold
@@ -118,15 +118,15 @@ Toko menawarkan 5 senjata dengan karakteristik berbeda dan passive yang berbeda:
 ===============================
 PENJELASAN PER FILE
 
-1. dungeon.c (Server)
+1. `dungeon.c` (Server)
 File ini berfungsi sebagai inti dari game atau game server, menangani semua logika permainan dan berkomunikasi dengan client.
 
 Fungsi Utama:
--Weapon weapons[] = Struct yang menyimpan info senjata (nama, damage, harga, passive ability).
--main(): Membuat socket, bind ke port 8080, listen koneksi, menerima koneksi client via accept(), membaca perintah client,mengeksekusi fungsi sesuai perintah, dan mengirim respon e client
--show_weapon_shop(): Menampilkan daftar senjata yang tersedia di toko dan mengirim ke player
--buy_weapon(): Menangani proses pembelian senjata
--battle_mode(): Mengelola mode pertarungan melawan musuh
+-`Weapon weapons[]` = Struct yang menyimpan info senjata (nama, damage, harga, passive ability).
+-`main()`: Membuat socket, bind ke port 8080, listen koneksi, menerima koneksi client via `accept()`, membaca perintah client,mengeksekusi fungsi sesuai perintah, dan mengirim respon e client
+-`show_weapon_shop()`: Menampilkan daftar senjata yang tersedia di toko dan mengirim ke player
+-`buy_weapon()`: Menangani proses pembelian senjata
+-`battle_mode()`: Mengelola mode pertarungan melawan musuh
 
 Fitur yang Ditangani:
 -Menyimpan status pemain (gold, senjata, damage, jumlah kill)
@@ -135,11 +135,11 @@ Fitur yang Ditangani:
 -Memberikan reward setelah mengalahkan musuh
 -Menangani semua perintah dari client (SHOW_STATS, SHOP, dll)
 
-2. player.c (Client)
+2. `player.c` (Client)
 File ini berfungsi sebagai antarmuka pemain, menampilkan menu dan menangani output/input dari pemain.
 
 Fungsi Utama:
--main(): Membuat koneksi ke server dan menampilkan menu utama
+-`main()`: Membuat koneksi ke server dan menampilkan menu utama
 -Menampilkan pilihan menu dan mengirim perintah ke server
 -Menerima dan menampilkan respons dari server
 
@@ -149,17 +149,17 @@ Fitur yang Ditangani:
 -Menerima dan menampilkan informasi dari server
 -Menangani input pemain selama mode pertarungan
 
-3. shop.h (Header File)
+3. `shop.h` (Header File)
 File ini berisi mendefinisikan struktur data dan deklarasi fungsi yang terkait dengan toko senjata.
 
 Fungsi Utama:
--struct Weapon: Menyimpan properti senjata: name, damage, price, passive.
--show_weapon_shop(): Untuk menampilkan toko daftar senjata.
--buy_weapon(): Untuk logika pembelian senjata
--MAX_INVENTORY: Untuk Batas maksimal inventory (10)
+-`struct Weapon`: Menyimpan properti senjata: name, damage, price, passive.
+-`show_weapon_shop()`: Untuk menampilkan toko daftar senjata.
+-`buy_weapon()`: Untuk logika pembelian senjata
+-`MAX_INVENTORY`: Untuk Batas maksimal inventory (10)
 
 # SOAL 4
-1. system.c
+1. `system.c`
 Program admin yang bertugas:
 - Mengelola data hunter dan dungeon
 - Generate dungeon secara acak
@@ -173,7 +173,7 @@ HP Reward    : 50-100
 DEF Reward   : 25-50
 EXP Reward   : 150-300
 
-2. hunter.c
+2. `hunter.c`
 Program player yang bisa:
 - Registrasi/login hunter
 - Melihat daftar dungeon
@@ -188,29 +188,37 @@ DEF   : 5
 EXP   : 0
 
 Cara me Run:
-- Jalankan system.c terlebih dahulu (sebagai server):
+- Jalankan `system.c` terlebih dahulu (sebagai server):
+```
 gcc system.c -o system
 ./system
+```
 
-- Jalankan hunter.c (sebagai client):
+- Jalankan `hunter.c` (sebagai client):
+```
 gcc hunter.c -o hunter -lpthread
 ./hunter
+```
 
 Fitur Utama
 Menu System (Admin)
-1. Hunter Info     - Lihat stat semua hunter
-2. Dungeon Info    - Lihat info dungeon
-3. Generate Dungeon- Buat dungeon baru
-4. Ban Hunter      - Blokir hunter
-5. Reset Hunter    - Reset stat hunter
+```
+1. Hunter Info   // Lihat stat semua hunter
+2. Dungeon Info     // Lihat info dungeon
+3. Generate Dungeon // Buat dungeon baru
+4. Ban Hunter       // Blokir hunter
+5. Reset Hunter     // Reset stat hunter
 6. Exit
+```
 
 Menu Hunter (Player)
-1. List Dungeon    - Lihat dungeon tersedia
-2. Raid Dungeon    - Serang dungeon untuk dapat reward
-3. Battle Hunter   - Duel dengan hunter lain
-4. Notification    - Toggle notifikasi
+```
+1. List Dungeon    // Lihat dungeon tersedia
+2. Raid Dungeon       // Serang dungeon untuk dapat reward
+3. Battle Hunter      // Duel dengan hunter lain
+4. Notification       // Toggle notifikasi
 5. Exit
+```
 
 Mekanisme Penting
 Level Up:
